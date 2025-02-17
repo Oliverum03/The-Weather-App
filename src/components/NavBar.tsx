@@ -71,6 +71,7 @@ export default function NavBar(props: Props) {
 
 //  DOESN'T WORK
   function handleCurrentLocation() {
+    alert("This Functionality doesn't work");
     console.log("Getting current location");
     if(navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(async (position) => {
