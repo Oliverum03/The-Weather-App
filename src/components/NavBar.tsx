@@ -88,6 +88,7 @@ export default function NavBar(props: Props) {
           }, 500);
         } catch (error) {  
           console.log(error);
+          console.log("error catched");
           setLoadingCity(false);     
         }
       });

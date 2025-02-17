@@ -94,7 +94,6 @@ export default function Home() {
   if (error) return 'An error has occurred: ' + error.message;
 
   const firstDay = data.list.slice(0,8); // to separate the actual first day from the entire array
-  console.log('data', data)
 
   const uniqueDates = [
     ...new Set(
@@ -112,7 +111,7 @@ export default function Home() {
       return entryDate === date && entryTime >= 6;
     });
   })
-  console.log('week', firstDataforEachDate)
+  firstDataforEachDate.shift(); // remove the first day from the array
 
   return (
     <div className="flex flex-col gap-4 bg-gray-100 min-h-screen">
@@ -179,7 +178,7 @@ export default function Home() {
           </section>
           {/* 7-days forecast */}
           <section className="flex w-full flex-col gap-4">
-            <p className="text-2xl">7-days Forecast:</p>
+            <p className="text-2xl">5-days Forecast:</p>
             {firstDataforEachDate.map((d, i) => (
               <ForecastWeatherDetail
                 key={i} 
