@@ -88,7 +88,7 @@ export default function Home() {
   useEffect(() => {refetch();}, [place, refetch]);
 
   if (isPending) return <div className="flex items-center min-h-screen justify-center">
-    <p className="animate-bounce">Loading...</p>
+    <LoadingWeather />
   </div>;
 
   if (error) return 'An error has occurred: ' + error.message;
